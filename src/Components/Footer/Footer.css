@@ -1,0 +1,179 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  gap: 20px;
+}
+
+.web-details {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 32px;
+  row-gap: 60px;
+}
+
+.webAddress-name {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.web-name {
+  font-family: "poppins";
+  font-size: 24px;
+  font-weight: bolder;
+  color: var(--black);
+}
+
+.web-address {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.web-address p {
+  width: 100%;
+  max-width: 310px;
+  margin: 0;
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: lighter;
+  color: var(--grey2);
+}
+
+.web-address label {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: lighter;
+  color: hsl(0, 0%, 54%);
+}
+
+.footer-styling {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  gap: 58px;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer-links {
+    flex: 1;
+  }
+}
+
+.links-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--black);
+}
+
+.links-content label {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--black);
+  cursor: pointer;
+}
+.links-content label:hover {
+    color: var(--grey2);
+  }
+
+.links-heading label {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--grey2);
+}
+
+.politics-heading label {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--grey2);
+}
+
+.politics-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.politics-content label {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--black);
+}
+
+.web-contact {
+  margin-right: 40px;
+}
+
+.contact-heading label {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--grey2);
+}
+
+.contact-content {
+  display: flex;
+  gap: 8px;
+}
+
+.contact-content input {
+  padding-right: 24px;
+  font-family: "poppins";
+  font-size: 14px;
+  font-weight: lighter;
+  color: var(--black);
+  border: none;
+  border-bottom: 1px solid var(--black);
+  width: 180px;
+}
+
+.contact-content input:focus-visible {
+  outline: none;
+}
+
+.contact-content input::placeholder {
+  font-family: "poppins";
+  font-size: 14px;
+  font-weight: lighter;
+  color: var(--grey2);
+}
+
+.contact-content button {
+  font-family: "poppins";
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--black);
+  border: none;
+  border-bottom: 1px solid var(--black);
+  background-color: transparent;
+}
+
+hr {
+  width: 100%;
+  /* padding: 0px 50px; */
+  border: 0.3px solid var(--grey3);
+}
+
+.copyright {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: lighter;
+  color: var(--black);
+  margin-bottom: 50px;
+}

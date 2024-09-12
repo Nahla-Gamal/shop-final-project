@@ -1,0 +1,41 @@
+.bread-crumbs {
+  background-color: var(--yellow3);
+  max-width: none;
+}
+
+.bread-crumbs-content {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  box-sizing: border-box;
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 750px) {
+  .bread-crumbs-content {
+    margin-left: 16px;
+  }
+}
+
+.vl {
+  border-left: 2px solid var(--grey2);
+  height: 50px;
+}
+
+.breadcrumbs-text1 {
+  font-family: "poppins";
+  font-weight: lighter;
+  font-size: 16px;
+  color: var(--grey2);
+  cursor: pointer;
+}
+
+.breadcrumbs-text2 {
+  font-family: "poppins";
+  font-weight: lighter;
+  font-size: 16px;
+  color: var(--black);
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

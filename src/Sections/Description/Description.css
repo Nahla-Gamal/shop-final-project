@@ -1,0 +1,43 @@
+.description-section {
+    width: 100%;
+    /* max-width: 1440px; */
+    /* margin: auto; */
+    padding: 24px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    border-top: 1px solid var(--grey3);
+    align-items: center;
+  
+}
+
+.desc-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.desc-title label {
+    font-family: "poppins";
+    font-weight: normal;
+    font-size: 24px;
+    color: var(--black);
+}
+
+.description-content {
+    display: flex;
+    max-width: 1100px;
+    flex-direction: column;
+    
+    /* gap: 10px; */
+}
+
+.first-paragraph, .second-paragraph {
+   font-family: "poppins";
+   font-weight: lighter;
+   font-size: 16px;
+   line-height: 150%;
+   color: var(--grey2);
+
+}

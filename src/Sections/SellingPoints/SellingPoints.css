@@ -1,0 +1,67 @@
+.sellingPoint-background {
+  background-color: var(--yellow);
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.sellingPoint-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 50px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  gap: 32px;
+}
+
+.selling-point {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1250px) {
+  .sellingPoint-wrapper {
+    gap: 0;
+  }
+
+  .selling-point {
+    width: 50%;
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .selling-point .details-1 {
+    font-size: 20px;
+  }
+  .selling-point {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.sellingPoint-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.sellingPoint-img {
+  width: 50px;
+  height: 50px;
+}
+
+.details-1 {
+  font-family: "poppins";
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--black3);
+}
+
+.details-2 {
+  font-family: "poppins";
+  font-weight: normal;
+  font-size: 16px;
+  color: var(--grey);
+}
