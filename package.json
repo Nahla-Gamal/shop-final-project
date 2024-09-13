@@ -16,6 +16,10 @@
     "react-simple-star-rating": "^5.1.7",
     "yup": "^1.4.0"
   },
+  "peerDependencies":{
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
