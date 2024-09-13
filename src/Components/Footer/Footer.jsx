@@ -1,26 +1,26 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { useSnackbar } from "react-simple-snackbar";
+// import { useSnackbar } from "react-simple-snackbar";
 import { useState } from "react";
 
 function Footer() {
-  const snackbarOptions = {
-    position: "top-center",
-    style: {
-      backgroundColor: "#fff",
-      color: "#006400",
-      border: "1px solid #006400",
-      borderRadius: "4px",
-    },
-  };
+  // const snackbarOptions = {
+  //   position: "top-center",
+  //   style: {
+  //     backgroundColor: "#fff",
+  //     color: "#006400",
+  //     border: "1px solid #006400",
+  //     borderRadius: "4px",
+  //   },
+  // };
 
-  const [openSnackbar] = useSnackbar(snackbarOptions);
+  // const [openSnackbar] = useSnackbar(snackbarOptions);
   const [email, setEmail] = useState("");
 
   function onSubmit(event) {
     event.preventDefault();
     if (email) {
-      openSnackbar("Thank you for subscribing to our newsletter", 3000);
+      // openSnackbar("Thank you for subscribing to our newsletter", 3000);
       setEmail("")
     }
   }
