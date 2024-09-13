@@ -1,7 +1,6 @@
 footer {
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
   gap: 20px;
 }
 
@@ -166,7 +165,6 @@ footer {
 
 hr {
   width: 100%;
-  /* padding: 0px 50px; */
   border: 0.3px solid var(--grey3);
 }
 

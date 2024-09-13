@@ -78,8 +78,6 @@ function ProductItem() {
           <label className="item-name">{productDetails.title}</label>
           <label className="item-price">{productDetails.price} $</label>
           <div className="item-rating">
-            {/* <Rating readonly allowFraction initialValue={0} />|{" "}
-            {productDetails.rating.count} Customer review */}
             <Rating readonly allowFraction initialValue={0} />
             <div className="vl2"></div>
             <label>{productDetails.rating.count} Customer review</label>

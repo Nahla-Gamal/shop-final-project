@@ -59,7 +59,6 @@ function ContactPage() {
   function handleOnSubmit(event) {
     testValidation();
     event.preventDefault();
-    console.log(FormData);
   }
 
   function handleOnChange(event) {
@@ -119,7 +118,6 @@ function ContactPage() {
                 </div>
               </div>
             </div>
-            {/* <div className="registration-info"> */}
             <form className="form-info" onSubmit={handleOnSubmit}>
               <div className="form-field">
                 <label className="field-name" htmlFor="yourName">
@@ -179,7 +177,6 @@ function ContactPage() {
                 </label>
               </button>
             </form>
-            {/* </div> */}
           </div>
         </div>
       </div>
