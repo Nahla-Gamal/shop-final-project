@@ -21,7 +21,8 @@ function CartPopup() {
       const modalBackground = document.querySelector("#cart-modal");
       const modalContent = document.querySelector(".modal-content");
 
-      const isBackgroundClicked = modalBackground && modalBackground.contains(event.target);
+      const isBackgroundClicked =
+        modalBackground && modalBackground.contains(event.target);
       const isCartClicked = modalContent && modalContent.contains(event.target);
 
       if (isBackgroundClicked && !isCartClicked) {
@@ -87,7 +88,10 @@ function CartPopup() {
             </div>
           ))}
           {shoppingCart.length == 0 && (
-            <div className="empty-cart">Your cart is empty</div>
+            <div className="empty-cart">
+              <span>Your cart is empty</span>
+              <Link to="/category/shop/products"><span className='go-shop' onClick={closeCart}>Go to Shop</span></Link>
+            </div>
           )}
         </div>
         <div className="cart-footer">

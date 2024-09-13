@@ -10,6 +10,7 @@ import { getCart, getCartTotalPrice } from "../../utils/Cart";
 import { removeItemFromCart } from "../../utils/Cart";
 import { useContext } from "react";
 import { CartPopupContext } from "../../App";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const cartPopupContext = useContext(CartPopupContext);
@@ -49,7 +50,7 @@ function Cart() {
   const removeFromCart = (id) => {
     removeItemFromCart(id);
     setCartProducts(getCart());
-  }
+  };
 
   return (
     <>
@@ -100,7 +101,10 @@ function Cart() {
                     </td>
                     <td className="delete-td">
                       <div className="button delete-icon">
-                        <img src={deleteIcon} onClick={() => removeFromCart(cartProduct.id)} />
+                        <img
+                          src={deleteIcon}
+                          onClick={() => removeFromCart(cartProduct.id)}
+                        />
                       </div>
                     </td>
                   </tr>
@@ -108,6 +112,14 @@ function Cart() {
               })}
             </tbody>
           </table>
+          {cartProducts.length == 0 && (
+                <div className="empty-cart">
+                  <span>Your cart is empty</span>
+                  <Link to="/category/shop/products">
+                    <span className="go-shop">Go to Shop</span>
+                  </Link>
+                </div>
+              )}
         </div>
 
         <div className="cart-prices">
@@ -124,7 +136,7 @@ function Cart() {
               <label className="total-price">{getCartTotalPrice()} $</label>
             </div>
             <div className="cartDiv-btn">
-            <button className="cart-button">Check Out</button>
+              <button className="cart-button">Check Out</button>
             </div>
           </div>
         </div>
