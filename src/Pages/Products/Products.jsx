@@ -2,7 +2,7 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 import "./Products.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Banner from "../../Sections/banner/banner";
+import Banner from "../../Sections/Banner/Banner";
 import webLogo from "../../assets/images/logo.png";
 import rightArrow from "../../assets/images/right-arrow.png";
 import SellingPoints from "../../Sections/SellingPoints/SellingPoints";
