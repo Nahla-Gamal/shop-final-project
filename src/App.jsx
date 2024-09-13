@@ -10,7 +10,7 @@ import Footer from "./Components/Footer/Footer";
 import ProductItem from "./Pages/ProductItem/ProductItem";
 import CartPopup from "./Components/CartPopup/CartPopup";
 import { createContext, useState, useEffect } from "react";
-// import SnackbarProvider from "react-simple-snackbar";
+import SnackbarProvider from "react-simple-snackbar";
 
 export const CartPopupContext = createContext(null);
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <main>
       <BrowserRouter>
-        {/* <SnackbarProvider> */}
+        <SnackbarProvider>
           <CartPopupContext.Provider
             value={{ cartPopupOpen, setCartPopupOpen }}
           >
@@ -51,7 +51,7 @@ function App() {
             </Routes>
             <Footer></Footer>
           </CartPopupContext.Provider>
-        {/* </SnackbarProvider> */}
+        </SnackbarProvider>
       </BrowserRouter>
     </main>
   );

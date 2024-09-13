@@ -9,28 +9,27 @@ import Cover3 from "../../assets/images/cover3.jpg";
 import { useState } from "react";
 import * as yup from "yup";
 import SellingPoints from "../../Sections/SellingPoints/SellingPoints";
-// import { useSnackbar } from "react-simple-snackbar";
+import { useSnackbar } from "react-simple-snackbar";
 import GreenTick from "../../assets/images/green-tick.svg";
 
 function ContactPage() {
-  // const snackbarOptions = {
-  //   position: "top-center",
-  //   style: {
-  //     backgroundColor: "#fff",
-  //     color: "#D40023",
-  //     border: "1px solid #D40023",
-  //     borderRadius: "4px",
-  //   },
-  // };
+  const snackbarOptions = {
+    position: "top-center",
+    style: {
+      backgroundColor: "#fff",
+      color: "#D40023",
+      border: "1px solid #D40023",
+      borderRadius: "4px",
+    },
+  };
 
-  // const [openSnackbar] = useSnackbar(snackbarOptions);
+  const [openSnackbar] = useSnackbar(snackbarOptions);
   const [isSuccess, setIsSuccess] = useState(false);
   const [FormData, setFormData] = useState({
     yourName: "",
     email: "",
     subject: "",
     message: "",
-    // checkacceptance: false,
   });
 
   const userSchema = yup.object().shape({
@@ -38,7 +37,6 @@ function ContactPage() {
     email: yup.string().email("must be valid email").required(),
     subject: yup.string(),
     message: yup.string().required(),
-    // checkacceptance: yup.boolean(),
   });
 
   async function testValidation() {
@@ -49,11 +47,11 @@ function ContactPage() {
         setIsSuccess(false);
       }, 3000);
     } catch (err) {
-      err.inner.forEach(() => {
-        // const errorMessage =
-        //   error.message.charAt(0).toUpperCase() + error.message.slice(1);
+      err.inner.forEach((error) => {
+        const errorMessage =
+          error.message.charAt(0).toUpperCase() + error.message.slice(1);
 
-        // openSnackbar(errorMessage, 3000);
+        openSnackbar(errorMessage, 3000);
       });
     }
   }
