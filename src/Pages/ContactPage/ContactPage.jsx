@@ -2,7 +2,7 @@ import "./ContactPage.css";
 import addressIcon from "../../assets/images/address.png";
 import telephoneIcon from "../../assets/images/telephone.png";
 import timeIcon from "../../assets/images/time.png";
-import Banner from "../../Sections/banner/banner";
+import Banner from "../../Sections/Banner/Banner";
 import webLogo from "../../assets/images/logo.png";
 import rightArrow from "../../assets/images/right-arrow.png";
 import Cover3 from "../../assets/images/cover3.jpg";

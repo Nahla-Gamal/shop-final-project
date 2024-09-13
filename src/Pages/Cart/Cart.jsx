@@ -1,6 +1,6 @@
 import "./Cart.css";
 import deleteIcon from "../../assets/images/Vector 5.png";
-import Banner from "../../Sections/banner/banner";
+import Banner from "../../Sections/Banner/Banner";
 import SellingPoints from "../../Sections/SellingPoints/SellingPoints";
 import webLogo from "../../assets/images/logo.png";
 import rightArrow from "../../assets/images/right-arrow.png";

@@ -2,7 +2,7 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import SellingPoints from "../../Sections/SellingPoints/SellingPoints";
 import HomeCover from "../../assets/images/home-cover-desktop.png";
-import Banner from "../../Sections/banner/banner";
+import Banner from "../../Sections/Banner/Banner";
 import ElectronicPic from "../../assets/images/electronicImg.jpeg";
 import JeweleryPic from "../../assets/images/jeweleryImg.jpeg";
 import MenClothingPic from "../../assets/images/men-clothing-img.jpeg";
