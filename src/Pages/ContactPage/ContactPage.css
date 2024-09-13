@@ -167,6 +167,7 @@
   background-color: var(--yellow2);
   border: none;
   margin-bottom: 10px;
+  position: relative;
 }
 
 @media only screen and (max-width: 900px) {
@@ -177,10 +178,27 @@
 
 .form-btn:hover {
   background-color: var(--yellow4);
-
 }
 
 .form-btn:disabled {
   background-color: var(--yellow3);
   color: var(--grey2);
+}
+
+.success-label {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  margin-top: 16px;
+  color: #006400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.success-label img {
+  width: 24px;
+  height: 24px;
 }

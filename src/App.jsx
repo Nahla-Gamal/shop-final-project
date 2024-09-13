@@ -10,6 +10,7 @@ import Footer from "./Components/Footer/Footer";
 import ProductItem from "./Pages/ProductItem/ProductItem";
 import CartPopup from "./Components/CartPopup/CartPopup";
 import { createContext, useState, useEffect } from "react";
+import SnackbarProvider from "react-simple-snackbar";
 
 export const CartPopupContext = createContext(null);
 
@@ -27,26 +28,30 @@ function App() {
   return (
     <main>
       <BrowserRouter>
-        <CartPopupContext.Provider value={{ cartPopupOpen, setCartPopupOpen }}>
-          <CartPopup />
-          <Header></Header>
-          <Routes>
-            <Route path="/" element={<LayoutPage />}>
-              <Route index element={<HomePage />}></Route>
-              <Route path="contact" element={<ContactPage />}></Route>
-              <Route
-                path="/category/:categoryId/products"
-                element={<Products />}
-              ></Route>
-              <Route
-                path="/category/:categoryId/products/:productId"
-                element={<ProductItem />}
-              ></Route>
-              <Route path="cart" element={<Cart />}></Route>
-            </Route>
-          </Routes>
-          <Footer></Footer>
-        </CartPopupContext.Provider>
+        <SnackbarProvider>
+          <CartPopupContext.Provider
+            value={{ cartPopupOpen, setCartPopupOpen }}
+          >
+            <CartPopup />
+            <Header></Header>
+            <Routes>
+              <Route path="/" element={<LayoutPage />}>
+                <Route index element={<HomePage />}></Route>
+                <Route path="contact" element={<ContactPage />}></Route>
+                <Route
+                  path="/category/:categoryId/products"
+                  element={<Products />}
+                ></Route>
+                <Route
+                  path="/category/:categoryId/products/:productId"
+                  element={<ProductItem />}
+                ></Route>
+                <Route path="cart" element={<Cart />}></Route>
+              </Route>
+            </Routes>
+            <Footer></Footer>
+          </CartPopupContext.Provider>
+        </SnackbarProvider>
       </BrowserRouter>
     </main>
   );

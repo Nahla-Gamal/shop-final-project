@@ -1,9 +1,32 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import { useSnackbar } from "react-simple-snackbar";
+import { useState } from "react";
 
 function Footer() {
+  const snackbarOptions = {
+    position: "top-center",
+    style: {
+      backgroundColor: "#fff",
+      color: "#006400",
+      border: "1px solid #006400",
+      borderRadius: "4px",
+    },
+  };
+
+  const [openSnackbar] = useSnackbar(snackbarOptions);
+  const [email, setEmail] = useState("");
+
   function onSubmit(event) {
     event.preventDefault();
+    if (email) {
+      openSnackbar("Thank you for subscribing to our newsletter", 3000);
+      setEmail("")
+    }
+  }
+
+  function onInputChange(event) {
+    setEmail(event.target.value);
   }
 
   return (
@@ -22,17 +45,16 @@ function Footer() {
               <label>Links</label>
             </div>
             <div className="links-content">
-            <Link to="/">
-              <label>Home</label>
-            </Link>
+              <Link to="/">
+                <label>Home</label>
+              </Link>
               <Link to="/category/shop/products">
-              <label>Shop</label>
+                <label>Shop</label>
               </Link>
               <Link to="/contact">
-              <label>Contact</label>
+                <label>Contact</label>
               </Link>
               <label>About</label>
-             
             </div>
           </div>
           <div className="web-politics footer-styling">
@@ -51,7 +73,12 @@ function Footer() {
             <label>Newsletter</label>
           </div>
           <form onSubmit={onSubmit} className="contact-content">
-            <input type="email" placeholder="Enter Your Email Address"></input>
+            <input
+              value={email}
+              onChange={onInputChange}
+              type="email"
+              placeholder="Enter Your Email Address"
+            ></input>
             <button>SUBSCRIBE</button>
           </form>
         </div>

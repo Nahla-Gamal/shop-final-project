@@ -16,6 +16,26 @@ function CartPopup() {
     setShoppingCart(getCart());
   }, [cartPopupContext.cartPopupOpen]);
 
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      const modalBackground = document.querySelector("#cart-modal");
+      const modalContent = document.querySelector(".modal-content");
+
+      const isBackgroundClicked = modalBackground && modalBackground.contains(event.target);
+      const isCartClicked = modalContent && modalContent.contains(event.target);
+
+      if (isBackgroundClicked && !isCartClicked) {
+        closeCart();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeCart();
+      }
+    });
+  }, []);
+
   const removeFromCart = (id) => {
     removeItemFromCart(id);
     setShoppingCart(getCart());
@@ -29,7 +49,11 @@ function CartPopup() {
 
   return (
     <div id="cart-modal" className="modal">
-      <div className={`modal-content ${cartPopupContext.cartPopupOpen ? "open" : ""}`}>
+      <div
+        className={`modal-content ${
+          cartPopupContext.cartPopupOpen ? "open" : ""
+        }`}
+      >
         <div className="cart-header">
           <div className="cart-heading">
             <label>Shopping Cart</label>
@@ -44,7 +68,7 @@ function CartPopup() {
             <div key={index} className="cart-item">
               <div className="shoppingcart-details">
                 <div className="shoppingItemDiv-pic">
-                <img src={cartItem.image} className="shoppingItem-pic" />
+                  <img src={cartItem.image} className="shoppingItem-pic" />
                 </div>
                 <div className="name-price">
                   <label className="shoppingitem-name">{cartItem.title}</label>
@@ -71,13 +95,13 @@ function CartPopup() {
             <label className="priceTitle">Subtotal</label>
             <label className="price-number">{getCartTotalPrice()} $</label>
           </div>
-          <Link to="/cart">
-            <div className="shopping-btn">
+          <div className="shopping-btn">
+            <Link to="/cart">
               <button className="btn" onClick={closeCart}>
                 Cart
               </button>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

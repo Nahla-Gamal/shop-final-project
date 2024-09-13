@@ -9,8 +9,22 @@ import Cover3 from "../../assets/images/cover3.jpg";
 import { useState } from "react";
 import * as yup from "yup";
 import SellingPoints from "../../Sections/SellingPoints/SellingPoints";
+import { useSnackbar } from "react-simple-snackbar";
+import GreenTick from "../../assets/images/green-tick.svg";
 
 function ContactPage() {
+  const snackbarOptions = {
+    position: "top-center",
+    style: {
+      backgroundColor: "#fff",
+      color: "#D40023",
+      border: "1px solid #D40023",
+      borderRadius: "4px",
+    },
+  };
+
+  const [openSnackbar] = useSnackbar(snackbarOptions);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [FormData, setFormData] = useState({
     yourName: "",
     email: "",
@@ -30,11 +44,16 @@ function ContactPage() {
   async function testValidation() {
     try {
       await userSchema.validate(FormData, { abortEarly: false });
-
-      console.log("Validation passed");
+      setIsSuccess(true);
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 3000);
     } catch (err) {
       err.inner.forEach((error) => {
-        alert(`${error.path}: ${error.message}`);
+        const errorMessage =
+          error.message.charAt(0).toUpperCase() + error.message.slice(1);
+
+        openSnackbar(errorMessage, 3000);
       });
     }
   }
@@ -152,11 +171,14 @@ function ContactPage() {
                   name="message"
                 ></input>
               </div>
-              <button
-                className="form-btn"
-                //   disabled={!FormData.checkacceptance}
-              >
+              <button className="form-btn">
                 Submit
+                <label
+                  className="success-label"
+                  style={{ opacity: `${isSuccess ? "1" : "0"}` }}
+                >
+                  <img src={GreenTick} /> Submitted Successfully
+                </label>
               </button>
             </form>
             {/* </div> */}

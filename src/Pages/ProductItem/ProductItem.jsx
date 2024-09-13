@@ -25,8 +25,10 @@ function ProductItem() {
     //   method: "POST",
     //   body: JSON.stringify(productDetails),
     // });
-    addItemToCart(productDetails, counter);
-    cartPopupContext.setCartPopupOpen(true);
+    if (counter > 0) {
+      addItemToCart(productDetails, counter);
+      cartPopupContext.setCartPopupOpen(true);
+    }
   };
 
   const [productDetails, setProductDetails] = useState(null);
@@ -80,9 +82,7 @@ function ProductItem() {
             {productDetails.rating.count} Customer review */}
             <Rating readonly allowFraction initialValue={0} />
             <div className="vl2"></div>
-            <label>
-            {productDetails.rating.count} Customer review
-            </label>
+            <label>{productDetails.rating.count} Customer review</label>
           </div>
           <p className="item-description">{productDetails.description}</p>
           <div className="actions">
