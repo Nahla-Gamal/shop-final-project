@@ -8,9 +8,12 @@ import Cover4 from "../../assets/images/cart.jpg";
 import { useState, useEffect } from "react";
 import { getCart, getCartTotalPrice } from "../../utils/Cart";
 import { removeItemFromCart } from "../../utils/Cart";
-
+import { useContext } from "react";
+import { CartPopupContext } from "../../App";
 
 function Cart() {
+  const cartPopupContext = useContext(CartPopupContext);
+
   const [cartProducts, setCartProducts] = useState([]);
 
   // **** GETTING CART DATA USING FAKE API **** //
@@ -41,16 +44,13 @@ function Cart() {
 
   useEffect(() => {
     setCartProducts(getCart());
-  }, []);
-
-  console.log('cartProducts',cartProducts)
-
+  }, [cartPopupContext.cartPopupOpen]);
 
   const removeFromCart = (id) => {
     removeItemFromCart(id);
     setCartProducts(getCart());
-    console.log(removeFromCart,"hello")
   }
+
   return (
     <>
       <Banner
